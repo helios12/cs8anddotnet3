@@ -1,5 +1,7 @@
 ﻿using System;
 
+using static System.Console;
+
 namespace PrimeFactors
 {
     class Program
@@ -7,7 +9,7 @@ namespace PrimeFactors
         static void Main(string[] args)
         {
             PrimeFactorsLib.PrimeFactors primeFactors = new PrimeFactorsLib.PrimeFactors();
-            Console.WriteLine(primeFactors.GetPrimeFactorsAsString(102340));
+            WriteLine(primeFactors.GetPrimeFactorsAsString(102340));
         }
     }
 }

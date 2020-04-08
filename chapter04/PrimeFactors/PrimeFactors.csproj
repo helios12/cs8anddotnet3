@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference 
+    <ProjectReference Include="../PrimeFactorsLib/PrimeFactorsLib.csproj" />
   </ItemGroup>
 
 </Project>
