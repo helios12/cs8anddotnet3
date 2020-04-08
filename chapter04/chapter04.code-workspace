@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "WritingFunctions"
+		},
+		{
+			"path": "Debugging"
+		},
+		{
+			"path": "Dumping"
+		},
+		{
+			"path": "Instrumenting"
+		},
+		{
+			"path": "CalculatorLib"
+		},
+		{
+			"path": "CalculatorLibUnitTests"
+		},
+		{
+			"path": "PrimeFactorsLib"
+		},
+		{
+			"path": "PrimeFactorsLibTests"
+		},
+		{
+			"path": "PrimeFactors"
+		},
+		{
+			"name": "chapter04",
+			"path": "."
+		}
+	]
+}
