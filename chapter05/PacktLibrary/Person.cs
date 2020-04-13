@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using static System.Console;
+
 namespace Packt.Shared
 {
     public class Person : object
@@ -12,6 +14,40 @@ namespace Packt.Shared
         public List<Person> Children = new List<Person>();
 
         // constants
-        public const string Species = "Homo Sapiens";        
+        public const string Species = "Homo Sapiens";
+        public readonly string HomePlanet = "Earth";
+        public readonly DateTime Instantiated;
+        public Person()
+        {
+            Name = "Unknown";
+            Instantiated = DateTime.Now;
+        }
+
+        public Person(string initialName, string homePlanet)
+        {
+            Name = initialName;
+            HomePlanet = homePlanet;
+            Instantiated = DateTime.Now;
+        }
+
+        public void WriteToConsole()
+        {
+            WriteLine($"{Name} was born on a {DateOfBirth:dddd}.");
+        }
+
+        public string GetOrigin()
+        {
+            return $"{Name} was born on {HomePlanet}.";
+        }
+
+        public (string, int) GetFruit()
+        {
+            return ("Apples", 5);
+        }
+
+        public (string Name, int Number) GetNamedFruit()
+        {
+            return (Name: "Apples", Number: 5);
+        }
     }
 }

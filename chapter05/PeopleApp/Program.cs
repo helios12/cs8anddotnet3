@@ -32,6 +32,15 @@ namespace PeopleApp
                 WriteLine($" {child.Name}");
             }
             WriteLine($"{bob.Name} is a {Person.Species}");
+            WriteLine($"{bob.Name}'s home planet is {bob.HomePlanet}.");
+            bob.WriteToConsole();
+            WriteLine(bob.GetOrigin());
+            (string, int) fruit = bob.GetFruit();
+            WriteLine($"{fruit.Item1}, {fruit.Item2} there are.");
+            var fruitNamed = bob.GetNamedFruit();
+            WriteLine($"There are {fruitNamed.Number} {fruitNamed.Name}.");
+            (string fruitName, int fruitNumber) = bob.GetFruit();
+            WriteLine($"Deconstructed: {fruitName}, {fruitNumber}.");
 
             Person alice = new Person
             {
@@ -58,6 +67,25 @@ namespace PeopleApp
                 arg0: gerrierAccount.AccountName,
                 arg1: gerrierAccount.Balance * BankAccount.InterestRate
             );
+
+            Person blankPerson = new Person();
+            WriteLine(format: "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
+                arg0: blankPerson.Name,
+                arg1: blankPerson.HomePlanet,
+                arg2: blankPerson.Instantiated
+            );
+
+            Person gunny = new Person("Gunny", "Mars");
+            WriteLine(format: "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}.",
+                arg0: gunny.Name,
+                arg1: gunny.HomePlanet,
+                arg2: gunny.Instantiated
+            );
+
+            var thing1 = ("Neville", 4);
+            WriteLine($"{thing1.Item1} has {thing1.Item2} children.");
+            var thing2 = (bob.Name, bob.Children.Count);
+            WriteLine($"{thing2.Name} has {thing2.Count} children.");
         }
     }
 }
