@@ -4,7 +4,7 @@ using static System.Console;
 
 namespace Packt.Shared
 {
-    public class Person
+    public class Person : IComparable<Person>
     {
         public string Name;
         public DateTime DateOfBirth;
@@ -62,6 +62,11 @@ namespace Packt.Shared
             {
                 Shout?.Invoke(this, EventArgs.Empty);
             }
+        }
+
+        public int CompareTo(Person other)
+        {
+            return Name.CompareTo(other.Name);
         }
     }
 }
