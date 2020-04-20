@@ -82,6 +82,35 @@ namespace PeopleApp
                 arg0: number2,
                 arg1: Squarer.Square(number2)
             );
+
+            DisplacementVector dv1 = new DisplacementVector(3, 5);
+            DisplacementVector dv2 = new DisplacementVector(-2, 7);
+            DisplacementVector dv3 = dv1 + dv2;
+            WriteLine($"({dv1.X}, {dv1.Y}) + ({dv2.X}, {dv2.Y}) = ({dv3.X}, {dv3.Y})");
+
+            Employee john = new Employee
+            {
+                Name = "John Jones",
+                DateOfBirth = new DateTime(1990, 7, 28)
+            };
+            john.EmployeeCode = "JJ001";
+            john.HireDate = new DateTime(2014, 11, 23);
+            john.WriteToConsole();
+            WriteLine($"{john.Name} was hired on {john.HireDate:dd.MM.yy}");
+            WriteLine(john.ToString());
+
+            Employee aliceInEmployee = new Employee
+            {
+                Name = "Alice",
+                EmployeeCode = "AA123"
+            };
+            Person aliceInPerson = aliceInEmployee;
+            aliceInEmployee.WriteToConsole();
+            aliceInPerson.WriteToConsole();
+            WriteLine(aliceInEmployee.ToString());
+            WriteLine(aliceInPerson.ToString());
+
+            Employee explicitAlice = (Employee)aliceInPerson;
         }
 
         private static void Harry_Shout(object sender, EventArgs e)
