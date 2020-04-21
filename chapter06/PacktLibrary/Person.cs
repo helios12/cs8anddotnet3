@@ -73,5 +73,17 @@ namespace Packt.Shared
         {
             return $"{Name} is a {base.ToString()}.";
         }
+
+        public void TimeTravel(DateTime when)
+        {
+            if (when <= DateOfBirth)
+            {
+                throw new PersonException("Don't travel so much back in time!");
+            }
+            else
+            {
+                WriteLine($"Welcome to {when:yyyy}!");
+            }
+        }
     }
 }
